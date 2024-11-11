@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6137332825137560000}
   - component: {fileID: 2173426943717816150}
+  - component: {fileID: 530956278}
   m_Layer: 5
   m_Name: GridManager
   m_TagString: Untagged
@@ -45,9 +46,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07162e49bce025a498b87ceac626d3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellPrefab: {fileID: 0}
-  cellContainer: {fileID: 0}
+  cellPrefab: {fileID: 8373538251995220167, guid: f6b71a5517d69ff479e48656ce7564f5, type: 3}
+  cellContainer: {fileID: 421380224394177390}
   gridSettings: {fileID: 11400000, guid: 302cb4e677a3df547822ca644746beae, type: 2}
+--- !u!114 &530956278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761647906611594983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bd46f7e9443034e8a5fe3aa0de8d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorPalette: {fileID: 0}
 --- !u!1 &7739291234711298194
 GameObject:
   m_ObjectHideFlags: 0

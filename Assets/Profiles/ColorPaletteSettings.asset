@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39c974da2e1e5b47a9c60b5168b7d7c, type: 3}
   m_Name: ColorPaletteSettings
   m_EditorClassIdentifier: 
+  CellSize: 100
+  Spacing: 5
   colors:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0.19696999, g: 1, b: 0, a: 1}

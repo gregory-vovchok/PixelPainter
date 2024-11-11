@@ -16,7 +16,7 @@ namespace ColorPicker
         #endregion
 
         [SerializeField] ColorButton colorButtonPrefab;
-        [SerializeField] Transform buttonContainer;
+        [SerializeField] VerticalLayoutGroup buttonContainer;
 
         public Color SelectedColor { get; set; }
 

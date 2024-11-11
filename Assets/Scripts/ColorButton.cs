@@ -32,5 +32,19 @@ namespace ColorPicker
             Debug.Log($"OnButtonClicked: {Color.GetHashCode()}");
             colorSelectionEvent?.RaiseEvent(Color);
         }
+
+        public void SetSize(int width, int height)
+        {
+            if (image != null)
+            {
+                RectTransform rectTransform = image.GetComponent<RectTransform>();
+                
+                rectTransform.sizeDelta = new Vector2(width, height);
+            }
+            else
+            {
+                Debug.LogError("Image component is missing.");
+            }
+        }
     }
 }

@@ -22,13 +22,20 @@ namespace ColorPicker
             Assert.IsNotNull(colorPaletteSettings, $"ColorPaletteData reference is missing.");
             Assert.IsFalse(colorPaletteSettings.colors.Length == 0, "ColorPaletteData's colors are not defined");
 
+            #region setup layout
+            buttonContainer.spacing = colorPaletteSettings.Spacing;
+            #endregion
+
+            #region colors
             for (int i = 0; i < colorPaletteSettings.colors.Length; i++)
             {
-                var colorButton = Instantiate(colorButtonPrefab, buttonContainer);
+                var colorButton = Instantiate(colorButtonPrefab, buttonContainer.transform);
 
                 var color = colorPaletteSettings.colors[i];
                 colorButton.Initialize(color, colorSelectionEvent);
+                colorButton.SetSize(colorPaletteSettings.CellSize, colorPaletteSettings.CellSize);
             }
+            #endregion
 
             SelectedColor = colorPaletteSettings.colors[0];
         }

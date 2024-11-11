@@ -11,7 +11,7 @@ namespace ColorPicker
         [SerializeField] Transform cellContainer;
         [SerializeField] GridSettingsData gridSettings;
 
-        
+
         void Start()
         {
             GenerateGrid();
@@ -37,7 +37,7 @@ namespace ColorPicker
                         Quaternion.identity,
                         cellContainer);
 
-                    cell.transform.localScale = Vector3.one * gridSettings.CellSize;
+                    cell.SetScale(gridSettings.CellSize);
                 }
             }
         }
