@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3598649759991454713}
   - component: {fileID: 3079060821243081937}
-  - component: {fileID: 8373538251995220167}
   - component: {fileID: 7498196242482953083}
+  - component: {fileID: 8373538251995220167}
+  - component: {fileID: 8120565059665941637}
   m_Layer: 5
   m_Name: GridCell
   m_TagString: Untagged
@@ -91,19 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8373538251995220167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168796887472479740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea3155eaae20f4d4eb909fe6575a8df2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 3079060821243081937}
 --- !u!61 &7498196242482953083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -130,3 +118,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8373538251995220167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168796887472479740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3155eaae20f4d4eb909fe6575a8df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridSettings: {fileID: 11400000, guid: 302cb4e677a3df547822ca644746beae, type: 2}
+  spriteRenderer: {fileID: 3079060821243081937}
+  colorAnimator: {fileID: 8120565059665941637}
+--- !u!114 &8120565059665941637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168796887472479740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87cd8f565aafdfe46a2ca5734842038b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridCell: {fileID: 8373538251995220167}

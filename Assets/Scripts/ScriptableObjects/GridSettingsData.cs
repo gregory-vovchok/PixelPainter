@@ -11,5 +11,6 @@ namespace ColorPicker
         public int Columns = 10;
         public float CellSize = 1.0f;
         public float Spacing = 0.1f;
+        public float CellColorTransitionDuration = 0.4f;
     }
 }
