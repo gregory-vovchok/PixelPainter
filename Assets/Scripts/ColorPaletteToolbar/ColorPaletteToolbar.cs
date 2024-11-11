@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace ColorPicker
 {
-    public partial class ColorPalette : MonoBehaviour
+    public partial class ColorPaletteToolbar : MonoBehaviour
     {
         [SerializeField] ColorPaletteSettingsData colorPaletteSettings;
 

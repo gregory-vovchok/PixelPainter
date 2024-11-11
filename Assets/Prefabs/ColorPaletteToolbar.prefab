@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4580866216729538043}
   - component: {fileID: 870409735025591442}
   m_Layer: 0
-  m_Name: ColorPalette
+  m_Name: ColorPaletteToolbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

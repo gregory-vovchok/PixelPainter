@@ -7,7 +7,7 @@ namespace ColorPicker
 {
     public class GridCellPainter : MonoBehaviour
     {
-        [SerializeField] ColorPalette colorPalette;
+        [SerializeField] ColorPaletteToolbar colorPalette;
 
         private void Update()
         {

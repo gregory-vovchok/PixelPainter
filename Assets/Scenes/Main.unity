@@ -420,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2139093302231053089, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
       propertyPath: m_Name
-      value: ColorPalette
+      value: ColorPaletteToolbar
       objectReference: {fileID: 0}
     - target: {fileID: 4580866216729538043, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
       propertyPath: m_Pivot.x
