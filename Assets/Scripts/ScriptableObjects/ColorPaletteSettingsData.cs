@@ -8,7 +8,8 @@ namespace ColorPicker
     public class ColorPaletteSettingsData : ScriptableObject
     {
         public int CellSize = 50;// in pixels
-        public int Spacing = 20;// in pixes
+        public int SpacingX = 20;// in pixes
+        public int SpacingY = 20;// in pixes
         public Color[] colors;
     }
 }

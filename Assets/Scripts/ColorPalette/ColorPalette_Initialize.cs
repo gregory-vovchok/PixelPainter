@@ -9,6 +9,9 @@ namespace ColorPicker
 {
     public partial class ColorPalette : MonoBehaviour
     {
+        public static int SupportedNumberOfColors = 18;
+
+
         void Start()
         {
             Initialize();
@@ -23,12 +26,18 @@ namespace ColorPicker
             Assert.IsFalse(colorPaletteSettings.colors.Length == 0, "ColorPaletteData's colors are not defined");
 
             #region setup layout
-            buttonContainer.spacing = colorPaletteSettings.Spacing;
+            buttonContainer.spacing = new Vector2(colorPaletteSettings.SpacingX, colorPaletteSettings.SpacingY);
             #endregion
 
             #region colors
             for (int i = 0; i < colorPaletteSettings.colors.Length; i++)
             {
+                if ((i + 1) > SupportedNumberOfColors)
+                {
+                    Debug.LogWarning($"<color=yellow>We support up to {SupportedNumberOfColors} colors!</color>");
+                    break;
+                }
+
                 var colorButton = Instantiate(colorButtonPrefab, buttonContainer.transform);
 
                 var color = colorPaletteSettings.colors[i];
