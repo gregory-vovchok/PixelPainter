@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ColorButton : MonoBehaviour
+namespace ColorPicker
 {
-    [SerializeField] Button button;
-    [SerializeField] Image image;
-    public Color Color { get => image.color; set => image.color = value; }
-
-    #region temp
-    ColorSelectionEvent colorSelectionEvent;
-    #endregion
-
-
-    void Awake()
+    public class ColorButton : MonoBehaviour
     {
-        button.onClick.AddListener(OnButtonClicked);
-    }
+        [SerializeField] Button button;
+        [SerializeField] Image image;
+        public Color Color { get => image.color; set => image.color = value; }
 
-    public void Initialize(Color color, ColorSelectionEvent colorSelectionEvent)
-    {
-        Color = color;
-        this.colorSelectionEvent = colorSelectionEvent;
-    }
+        #region temp
+        ColorSelectionEvent colorSelectionEvent;
+        #endregion
 
-    void OnButtonClicked()
-    {
-        Debug.Log($"OnButtonClicked: {Color.GetHashCode()}");
-        colorSelectionEvent?.RaiseEvent(Color);
+
+        void Awake()
+        {
+            button.onClick.AddListener(OnButtonClicked);
+        }
+
+        public void Initialize(Color color, ColorSelectionEvent colorSelectionEvent)
+        {
+            Color = color;
+            this.colorSelectionEvent = colorSelectionEvent;
+        }
+
+        void OnButtonClicked()
+        {
+            Debug.Log($"OnButtonClicked: {Color.GetHashCode()}");
+            colorSelectionEvent?.RaiseEvent(Color);
+        }
     }
 }

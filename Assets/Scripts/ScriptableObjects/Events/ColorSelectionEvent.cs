@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ColorSelectionEvent", menuName = "Assets/Events/ColorSelectionEvent")]
-public class ColorSelectionEvent : ScriptableObject
+namespace ColorPicker
 {
-    public event Action<Color> OnColorSelected;
-
-
-    public void RaiseEvent(Color color)
+    [CreateAssetMenu(fileName = "ColorSelectionEvent", menuName = "Assets/Events/ColorSelectionEvent")]
+    public class ColorSelectionEvent : ScriptableObject
     {
-        OnColorSelected?.Invoke(color);
+        public event Action<Color> OnColorSelected;
+
+
+        public void RaiseEvent(Color color)
+        {
+            OnColorSelected?.Invoke(color);
+        }
     }
 }

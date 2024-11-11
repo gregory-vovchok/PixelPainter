@@ -5,42 +5,44 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-
-public partial class ColorPalette : MonoBehaviour
+namespace ColorPicker
 {
-    [SerializeField] ColorPaletteData colorPaletteData;
-
-    #region events
-    [SerializeField] ColorSelectionEvent colorSelectionEvent;
-    #endregion
-
-    [SerializeField] ColorButton colorButtonPrefab;
-    [SerializeField] Transform buttonContainer;
-
-    public Color SelectedColor { get; set; }
-
-
-    
-    void OnEnable()
+    public partial class ColorPalette : MonoBehaviour
     {
-        if (colorSelectionEvent != null)
+        [SerializeField] ColorPaletteSettingsData colorPaletteData;
+
+        #region events
+        [SerializeField] ColorSelectionEvent colorSelectionEvent;
+        #endregion
+
+        [SerializeField] ColorButton colorButtonPrefab;
+        [SerializeField] Transform buttonContainer;
+
+        public Color SelectedColor { get; set; }
+
+
+
+        void OnEnable()
         {
-            colorSelectionEvent.OnColorSelected += OnColorSelected;
+            if (colorSelectionEvent != null)
+            {
+                colorSelectionEvent.OnColorSelected += OnColorSelected;
+            }
         }
-    }
 
-    void OnDisable()
-    {
-        if (colorSelectionEvent != null)
+        void OnDisable()
         {
-            colorSelectionEvent.OnColorSelected -= OnColorSelected;
+            if (colorSelectionEvent != null)
+            {
+                colorSelectionEvent.OnColorSelected -= OnColorSelected;
+            }
         }
-    }
 
-    void OnColorSelected(Color color)
-    {
-        Debug.Log($"OnColorSelected: {color.GetHashCode()}");
+        void OnColorSelected(Color color)
+        {
+            Debug.Log($"OnColorSelected: {color.GetHashCode()}");
 
-        SelectedColor = color;
+            SelectedColor = color;
+        }
     }
 }
