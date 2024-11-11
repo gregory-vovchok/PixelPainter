@@ -1,18 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class GridCell : MonoBehaviour
+namespace ColorPicker
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GridCell : MonoBehaviour
     {
-        
-    }
+        [SerializeField] SpriteRenderer spriteRenderer;
+        ColorPalette colorPalette;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        void Start()
+        {
+            colorPalette = FindObjectOfType<ColorPalette>();
+        }
+
+        void OnMouseOver()
+        {
+            if (Mouse.current.leftButton.isPressed)
+            {
+                PaintCell();
+            }
+        }
+
+        void PaintCell()
+        {
+            spriteRenderer.color = colorPalette.SelectedColor;
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace ColorPicker
 {
     public partial class ColorPalette : MonoBehaviour
     {
-        [SerializeField] ColorPaletteSettingsData colorPaletteData;
+        [SerializeField] ColorPaletteSettingsData colorPaletteSettings;
 
         #region events
         [SerializeField] ColorSelectionEvent colorSelectionEvent;

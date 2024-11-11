@@ -19,18 +19,18 @@ namespace ColorPicker
             Assert.IsNotNull(colorSelectionEvent, $"ColorSelectionEvent reference is missing.");
             Assert.IsNotNull(colorButtonPrefab, $"ColorButtonPrefab reference is missing.");
             Assert.IsNotNull(buttonContainer, $"ButtonContainer reference is missing.");
-            Assert.IsNotNull(colorPaletteData, $"ColorPaletteData reference is missing.");
-            Assert.IsFalse(colorPaletteData.colors.Length == 0, "ColorPaletteData's colors are not defined");
+            Assert.IsNotNull(colorPaletteSettings, $"ColorPaletteData reference is missing.");
+            Assert.IsFalse(colorPaletteSettings.colors.Length == 0, "ColorPaletteData's colors are not defined");
 
-            for (int i = 0; i < colorPaletteData.colors.Length; i++)
+            for (int i = 0; i < colorPaletteSettings.colors.Length; i++)
             {
                 var colorButton = Instantiate(colorButtonPrefab, buttonContainer);
 
-                var color = colorPaletteData.colors[i];
+                var color = colorPaletteSettings.colors[i];
                 colorButton.Initialize(color, colorSelectionEvent);
             }
 
-            SelectedColor = colorPaletteData.colors[0];
+            SelectedColor = colorPaletteSettings.colors[0];
         }
     }
 }
