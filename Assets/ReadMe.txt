@@ -1,5 +1,5 @@
 # How to change the Palette Toolbar settings?
-In 'Profiles' folder you can find the ColorPaletteSettings asset where you can customize the available colors and other useful settings of the palette toolbar
+In 'Profiles' folder you can find the ColorPaletteToolbarSettings asset where you can customize the available colors and other useful settings of the palette toolbar
 
 
 # How to change the Grid settings?
