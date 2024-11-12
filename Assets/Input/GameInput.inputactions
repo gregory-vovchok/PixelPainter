@@ -1,1 +1,54 @@
-{}
+{
+    "name": "GameInput",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "0bbc2634-a478-4d8f-870f-e73b8ca6c58a",
+            "actions": [
+                {
+                    "name": "Undo",
+                    "type": "Button",
+                    "id": "30451d09-0678-4206-a0e0-7e0a7ac2f153",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Redo",
+                    "type": "Button",
+                    "id": "b7811fe6-8e3c-410f-aa18-5a2c9e3df2bd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f49d08b6-47f4-4abb-804a-8f33ea14f6d9",
+                    "path": "<Keyboard>/u",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Undo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "195f446a-a74f-450e-b832-64f2e64edb95",
+                    "path": "<Keyboard>/r",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Redo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

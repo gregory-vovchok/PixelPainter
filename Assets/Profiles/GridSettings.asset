@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4517fd492b87749b2485158b15344f, type: 3}
   m_Name: GridSettings
   m_EditorClassIdentifier: 
-  Rows: 10
-  Columns: 10
-  CellSize: 1
-  Spacing: 0.1
+  Rows: 100
+  Columns: 100
+  CellSize: 0.1
+  Spacing: 0
+  CellColorTransitionDuration: 0.3

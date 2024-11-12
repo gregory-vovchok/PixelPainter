@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace ColorPicker
 {
-    public class GridHistoryManager : MonoBehaviour
+    public partial class GridHistoryManager : MonoBehaviour
     {
         Stack<GridAction> undoStack = new Stack<GridAction>();
         public bool IsUndoStackEmpty { get => undoStack.Count == 0; }
@@ -28,12 +28,14 @@ namespace ColorPicker
         {
             redoButton.OnClick += OnRedoButtonClicked;
             undoButton.OnClick += OnUndoButtonClicked;
+            controls.UI.Enable();
         }
 
         void OnDisable()
         {
             redoButton.OnClick -= OnRedoButtonClicked;
             undoButton.OnClick -= OnUndoButtonClicked;
+            controls.UI.Disable();
         }
 
         public void AddAction(GridAction action)
