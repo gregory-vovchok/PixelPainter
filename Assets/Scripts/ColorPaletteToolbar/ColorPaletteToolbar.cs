@@ -15,10 +15,8 @@ namespace ColorPicker
         [SerializeField] ColorSelectionEvent colorSelectionEvent;
         #endregion
 
-        [SerializeField] ColorButton colorButtonPrefab;
+        [SerializeField] ColorSample colorSamplePrefab;
         [SerializeField] GridLayoutGroup buttonContainer;
-
-        public Color SelectedColor { get; set; }
 
 
 
@@ -38,11 +36,11 @@ namespace ColorPicker
             }
         }
 
-        void OnColorSelected(Color color)
+        void OnColorSelected(ColorSample colorSample)
         {
-            Debug.Log($"OnColorSelected: {color.GetHashCode()}");
+            Debug.Log($"OnColorSelected: {colorSample.Color.GetHashCode()}");
 
-            SelectedColor = color;
+            SelectColor(colorSample);
         }
     }
 }

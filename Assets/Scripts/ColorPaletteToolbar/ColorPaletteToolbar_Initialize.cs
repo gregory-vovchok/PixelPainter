@@ -7,11 +7,8 @@ using UnityEngine.UI;
 
 namespace ColorPicker
 {
-    public partial class ColorPaletteToolbar : MonoBehaviour
+    public partial class ColorPaletteToolbar
     {
-        public static int SupportedNumberOfColors = 18;
-
-
         void Start()
         {
             Initialize();
@@ -20,33 +17,38 @@ namespace ColorPicker
         public void Initialize()
         {
             Assert.IsNotNull(colorSelectionEvent, $"ColorSelectionEvent reference is missing.");
-            Assert.IsNotNull(colorButtonPrefab, $"ColorButtonPrefab reference is missing.");
+            Assert.IsNotNull(colorSamplePrefab, $"ColorSamplePrefab reference is missing.");
             Assert.IsNotNull(buttonContainer, $"ButtonContainer reference is missing.");
             Assert.IsNotNull(colorPaletteSettings, $"ColorPaletteData reference is missing.");
-            Assert.IsFalse(colorPaletteSettings.colors.Length == 0, "ColorPaletteData's colors are not defined");
+            Assert.IsFalse(colorPaletteSettings.Colors.Length == 0, "ColorPaletteData's colors are not defined");
 
             #region setup layout
             buttonContainer.spacing = new Vector2(colorPaletteSettings.SpacingX, colorPaletteSettings.SpacingY);
             #endregion
 
+            #region color sample selection outline
+            if (colorPaletteSettings.EnableSelectionOutlineAnimation)
+                selectionOutline.StartBlinking(colorPaletteSettings.SelectionOutlineBlinkingDuration);
+
+            selectionOutline.SetSize(colorPaletteSettings.CellSize, colorPaletteSettings.CellSize);
+            #endregion
+
             #region colors
-            for (int i = 0; i < colorPaletteSettings.colors.Length; i++)
+            ColorSample colorSample = null;
+
+            for (int i = 0; i < colorPaletteSettings.Colors.Length; i++)
             {
-                if ((i + 1) > SupportedNumberOfColors)
-                {
-                    Debug.LogWarning($"<color=yellow>We support up to {SupportedNumberOfColors} colors!</color>");
-                    break;
-                }
+                colorSample = Instantiate(colorSamplePrefab, buttonContainer.transform);
 
-                var colorButton = Instantiate(colorButtonPrefab, buttonContainer.transform);
+                colorSample.Initialize(
+                    colorPaletteSettings.Colors[i], 
+                    colorSelectionEvent);
 
-                var color = colorPaletteSettings.colors[i];
-                colorButton.Initialize(color, colorSelectionEvent);
-                colorButton.SetSize(colorPaletteSettings.CellSize, colorPaletteSettings.CellSize);
+                colorSample.SetSize(colorPaletteSettings.CellSize, colorPaletteSettings.CellSize);
             }
             #endregion
 
-            SelectedColor = colorPaletteSettings.colors[0];
+            SelectColor(colorSample);// by default we select the last created color sample
         }
     }
 }

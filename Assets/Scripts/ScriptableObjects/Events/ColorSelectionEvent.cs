@@ -8,12 +8,12 @@ namespace ColorPicker
     [CreateAssetMenu(fileName = "ColorSelectionEvent", menuName = "Assets/Events/ColorSelectionEvent")]
     public class ColorSelectionEvent : ScriptableObject
     {
-        public event Action<Color> OnColorSelected;
+        public event Action<ColorSample> OnColorSelected;
 
 
-        public void RaiseEvent(Color color)
+        public void RaiseEvent(ColorSample colorSample)
         {
-            OnColorSelected?.Invoke(color);
+            OnColorSelected?.Invoke(colorSample);
         }
     }
 }

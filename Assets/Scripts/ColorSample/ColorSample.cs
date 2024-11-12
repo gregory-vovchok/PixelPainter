@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace ColorPicker
 {
-    public class ColorButton : MonoBehaviour
+    public class ColorSample : MonoBehaviour
     {
         [SerializeField] Button button;
         [SerializeField] Image image;
@@ -30,7 +30,7 @@ namespace ColorPicker
         void OnButtonClicked()
         {
             Debug.Log($"OnButtonClicked: {Color.GetHashCode()}");
-            colorSelectionEvent?.RaiseEvent(Color);
+            colorSelectionEvent?.RaiseEvent(this);
         }
 
         public void SetSize(int width, int height)
