@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,24 +14,51 @@ namespace ColorPicker
 
         public SpriteRenderer Sprite { get => spriteRenderer; }
 
+        public Color Color { get; private set; }
 
-        public void PaintCell(Color color)
+
+        void Start()
         {
-            Debug.Log($"Cell ({gameObject.GetInstanceID()}) color changed: {color.GetHashCode()}");
-
-            SetColor(color, isAnimated: true);
+            Color = spriteRenderer.color;
         }
 
-        public void SetColor(Color color, bool isAnimated = false)
+        public void ChangeColor(Color newColor, GridHistoryManager historyManager)
         {
+            Color previousColor = Color;
+
+            if (previousColor == newColor)
+            {
+                return;
+            }
+
+            GridAction action = new GridAction(
+                doAction: () => SetColor(newColor, isAnimated: true),
+                undoAction: () => SetColor(previousColor, isAnimated: false));
+
+            historyManager.AddAction(action);
+
+            action.Execute();
+        }
+
+        void SetColor(Color newColor, bool isAnimated = false)
+        {
+            Debug.Log($"Cell ({gameObject.GetInstanceID()}) color changed: {newColor.GetHashCode()}");
+
             if (isAnimated)
             {
-                colorAnimator.SetColor(color, gridSettings.CellColorTransitionDuration);
+                Color = newColor;
+                colorAnimator.SetColor(newColor, gridSettings.CellColorTransitionDuration);
             }
             else
             {
-                spriteRenderer.color = color;
+                SetColorInstantly(newColor);
             }
+        }
+
+        void SetColorInstantly(Color newColor)
+        {
+            Color = newColor;
+            spriteRenderer.color = newColor;
         }
     }
 }

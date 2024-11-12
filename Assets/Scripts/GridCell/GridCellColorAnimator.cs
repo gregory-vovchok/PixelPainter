@@ -24,6 +24,5 @@ namespace ColorPicker
 
             colorTween = gridCell.Sprite.DOColor(targetColor, duration);
         }
-
     }
 }

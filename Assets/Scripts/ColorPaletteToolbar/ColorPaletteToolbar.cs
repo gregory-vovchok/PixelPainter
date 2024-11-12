@@ -10,6 +10,8 @@ namespace ColorPicker
     public partial class ColorPaletteToolbar : MonoBehaviour
     {
         [SerializeField] ColorPaletteToolbarSettingsData colorPaletteSettings;
+        [SerializeField] GridHistoryManager historyManager;
+        public GridHistoryManager HistoryManager { get => historyManager; }
 
         #region events
         [SerializeField] ColorSelectionEvent colorSelectionEvent;
@@ -17,7 +19,6 @@ namespace ColorPicker
 
         [SerializeField] ColorSample colorSamplePrefab;
         [SerializeField] GridLayoutGroup buttonContainer;
-
 
 
         void OnEnable()

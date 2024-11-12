@@ -28,7 +28,7 @@ namespace ColorPicker
                
                 if (cell != null)
                 {
-                    cell.PaintCell(colorPalette.SelectedColor);
+                    cell.ChangeColor(colorPalette.SelectedColor, colorPalette.HistoryManager);
                 }
             }
         }

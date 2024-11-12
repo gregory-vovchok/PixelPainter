@@ -199,7 +199,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -504,6 +504,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4580866216729538043, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478839571274930389, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478839571274930389, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531916317783482496, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531916317783482496, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531916317783482496, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531916317783482496, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727894252660747296, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727894252660747296, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727894252660747296, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727894252660747296, guid: 1fdab1aa04b62f04cb44b8fe236c6826, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
